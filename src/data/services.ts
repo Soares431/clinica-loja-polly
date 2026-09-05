@@ -7,8 +7,7 @@ export const services: Service[] = [
     icon: Lightbulb,
     title: "Avaliação Neuropsicológica",
     description:
-      "Avaliação neuropsicológica completa para adultos, investigando atenção, memória, linguagem, raciocínio e funções executivas. Processo estruturado com entrevista, aplicação de instrumentos específicos e devolutiva com laudo.",
-
+    "Avaliação neuropsicológica completa para adultos, investigando atenção, memória, linguagem, raciocínio e funções executivas. Processo estruturado com entrevista, aplicação de instrumentos específicos e devolutiva com laudo.",
     tags: ["Atenção", "Memória", "Funções executivas"],
   },
   {

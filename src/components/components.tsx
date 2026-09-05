@@ -18,11 +18,7 @@ export default function ServiceCard({ service }: { service: Service }) {
           <p className="text-sm text-gray-600 leading-relaxed mt-2">
             {service.description}
           </p>
-
-          <p className="text-sm text-brand-teal font-medium mt-4">
-            Modalidade {service.modality}
-          </p>
-
+          
           <div className="flex gap-2 flex-wrap mt-3">
             {service.tags.map((tag) => (
               <span

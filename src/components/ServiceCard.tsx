@@ -19,8 +19,6 @@ export default function ServiceCard({ service }: { service: Service }) {
             {service.description}
           </p>
 
-         
-
           <div className="flex gap-2 flex-wrap mt-3">
             {service.tags.map((tag) => (
               <span

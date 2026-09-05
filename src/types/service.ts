@@ -5,6 +5,5 @@ export type Service = {
   icon: LucideIcon;
   title: string;
   description: string;
-
   tags: string[];
 };
