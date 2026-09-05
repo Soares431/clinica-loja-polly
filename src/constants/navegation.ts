@@ -4,6 +4,7 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: NavLink[] = [
+  {href: "https://psicologix.vercel.app/", label:"Sobre mim"},
   { href: "/blog", label: "Blog" },
   { href: "/loja", label: "Produtos" },
   { href: "/servicos", label: "Serviços" },

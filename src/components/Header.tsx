@@ -14,21 +14,21 @@ export default function Header() {
         <Image
           src={logoImg}
           alt="Logo clinica"
-          width={75}
-          height={75}
-          className="border-2 brand-gray rounded-full object-cover "
+          width={70}
+          height={70}
+          className="border-2 brand-gray rounded-full object-cover"
         />
         <div className="leading-tight">
-          <p className=" text-[30px] tracking-widest text-teal font-serif -mt-1">
+          <p className="text-[25px] tracking-widest text-teal font-serif -mt-1">
             Clínica
           </p>
-          <p className="font-script text-[28px] text-ink">
-            <a href="https://psicologix.vercel.app/pages/index.html" target="_bland">Pollyanna Barreto</a>
+          <p className="font-script text-[20px] text-ink">
+            Pollyanna Barreto
           </p>
         </div>
       </div>
 
-      <nav className="flex item-center gap-8 text-[20px] font-medium">
+      <nav className="flex item-center gap-8 text-[18px] font-medium">
         {NAV_LINKS.map((link) => {
           const active = pathname === link.href;
           return (
@@ -49,7 +49,7 @@ export default function Header() {
 
       <Link
         href="/agendamento"
-        className="bg-brand-teal-deep text-white text-[20px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition"
+        className="bg-brand-teal-deep text-white text-[18px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition"
       >
         Agendar consulta
       </Link>
