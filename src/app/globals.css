@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -10,13 +12,25 @@
   --color-teal: #2e8c97;
 
   --color-brand-green: #86bd2b;
+  --color-brand-green-dark: #2E6F40;
+
   --color-brand-gray: #484848;
   --color-brand-blue-light: #c2e0f0;
+  --color-brand-blue-steal: #4682B4;
+  
+  --color-brand-blue-clean: #93B4D7;
   --color-brand-green-light: #dceac2;
   --color-brand-jade-green: #00AA6B;
+  --color-brand-coral: #027A7B;
+
 
   --font-script: var(--font-script);
   --font-serif: var(--font-serif);
+  --font-cursive: "Pacifico", cursive;
+  --font-title: "Open Sans", serif;
 }
+
+
+
 
 

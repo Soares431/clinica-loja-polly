@@ -1,10 +1,15 @@
+"use client";
+
 import { Product } from "@/types/product";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
+import { use } from "react";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { addItem } = useCart();
+
   return (
     <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      {/* Placeholder de imagem até termos fotos reais */}
       <div
         className={`h-40 ${product.bgColor || "bg-gray-100"} flex items-center justify-center relative overflow-hidden`}
       >
@@ -40,7 +45,10 @@ export default function ProductCard({ product }: { product: Product }) {
             R$ {product.price.toFixed(2).replace(".", ",")}
           </span>
 
-          <button className="bg-brand-teal text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition">
+          <button
+            onClick={() => addItem(product)}
+            className="bg-brand-teal text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition"
+          >
             Adicionar
           </button>
         </div>

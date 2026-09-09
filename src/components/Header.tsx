@@ -3,33 +3,36 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBasket } from "lucide-react";
 import { NAV_LINKS } from "@/constants/navegation";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const logoImg = "/assets/image/logo-fundo.png";
+  const { totalItems } = useCart();
+  const logoImg = "/assets/image/logos/clinica1SemFundo_semNome.png";
 
   return (
     <header className="relative bg-white-soft">
       <div className="flex items-center justify-between px-4 sm:px-8 py-4">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <Image
             src={logoImg}
-            alt="Logo clinica"
-            width={70}
-            height={70}
-            className="w-12 h-12 sm:w-[70px] sm:h-[70px] border-2 brand-gray rounded-full object-cover"
+            alt="Logo clínica"
+            width={120}
+            height={120}
+            className="w-28 h-28 object-cover"
           />
           <div className="leading-tight">
-            <p className="text-lg sm:text-[25px] tracking-widest text-teal font-serif -mt-1">
+            <p className="sm:text-[27px] tracking-widest text-teal font-title -mt-1">
               Clínica
             </p>
-            <p className="font-script text-base sm:text-[20px] text-ink">
-              Pollyanna Barreto
+            <p className="font-cursive text-base sm:text-[18px]  text-brand-green-dark">
+              PSICOLOGIX
             </p>
+
           </div>
         </div>
 
@@ -52,20 +55,46 @@ export default function Header() {
           })}
         </nav>
 
-        <Link
-          href="/agendamento"
-          className="hidden md:inline-block bg-brand-teal-deep text-white text-[18px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition"
-        >
-          Agendar consulta
-        </Link>
+        <div className="hidden md:flex items-center gap-5">
+          <Link href="/carrinho" className="relative" aria-label="Ver cesta">
+            <ShoppingBasket className="w-7 h-7 text-ink hover:text-brand-teal transition-colors" />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-brand-coral text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </Link>
 
-        <button
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden text-ink"
-          aria-label="Abrir menu"
-        >
-          {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-        </button>
+          <Link
+            href="/agendamento"
+            className="bg-brand-teal-deep text-white text-[18px] font-semibold px-5 py-2.5 rounded-full hover:opacity-90 transition"
+          >
+            Agendar consulta
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-4 md:hidden">
+          <Link href="/carrinho" className="relative" aria-label="Ver cesta">
+            <ShoppingBasket className="w-6 h-6 text-ink" />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-brand-coral text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </Link>
+
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="text-ink"
+            aria-label="Abrir menu"
+          >
+            {menuOpen ? (
+              <X className="w-7 h-7" />
+            ) : (
+              <Menu className="w-7 h-7" />
+            )}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
