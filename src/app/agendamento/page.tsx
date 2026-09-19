@@ -1,22 +1,19 @@
-import BookingForm from "@/components/BookingForm";
+// clinica-frontend/src/app/agendamento/page.tsx
+import Link from "next/link";
 
 export default function Agendamento() {
   return (
-    <main className="max-w-6xl mx-auto px-8 py-16">
-      <div className="mb-10 text-center">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span className="w-6 h-[2px] bg-brand-green" />
-          <span className="font-script text-xl text-brand-green">Agendamento</span>
-        </div>
-        <h1 className="font-serif text-4xl text-brand-gray">
-          Marque sua consulta
-        </h1>
-        <p className="text-gray-600 mt-2">
-          Escolha o melhor dia e horário para o seu atendimento online.
-        </p>
-      </div>
-
-      <BookingForm />
+    <main className="max-w-2xl mx-auto px-8 py-24 text-center">
+      <h1 className="font-serif text-3xl text-brand-gray mb-4">Agendar Consulta</h1>
+      <p className="text-gray-600 mb-8">
+        Você será direcionado para o nosso sistema de agendamento.
+      </p>
+      <Link
+        href="http://localhost:3001"
+        className="inline-block bg-brand-teal text-white font-semibold px-8 py-3 rounded-full hover:opacity-90 transition"
+      >
+        Ir para o Agendamento
+      </Link>
     </main>
   );
 }

@@ -1,36 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap");
 @import "tailwindcss";
 
 @theme {
+  /* Fontes */
+  --font-title: "Open Sans", sans-serif;
+  --font-cursive: "Pacifico", cursive;
+
+  /* Cores para o Rodapé (Footer) com Alto Contraste */
+  --color-footer-bg: #19535B;          /* Fundo: Azul/Verde Petróleo Escuro */
+  --color-footer-border: #4FA4AC;      /* Borda e destaques: Turquesa Médio */
+  --color-footer-text: #FFFFFF;        /* Branco Puro para máximo contraste */
+  --color-footer-text-soft: #F4F7F6;   /* Branco Gelo para textos explicativos */
+  --color-footer-icon: #4FA4AC;        /* Subtítulos e Ícones de contato */
+
+  /* Cores Principais do Projeto */
+  --color-bg: #f6f8f6;
+  --color-white-soft: #f0fdf4;
+  --color-ink: #2e3235;
+  --color-ink-soft: #6b7175;
+
+  /* Paleta Teal / Turquesa */
   --color-brand-teal: #61b0b7;
   --color-brand-teal-deep: #1f6b77;
-  --color-ink-soft: #6b7175;
-  --color-white-soft: #f0fdf4;
-
-  --color-ink: #2e3235;
   --color-teal: #2e8c97;
 
+  /* Paleta Verde */
   --color-brand-green: #86bd2b;
-  --color-brand-green-dark: #2E6F40;
+  --color-brand-green-dark: #2e6f40;
+  --color-brand-green-light: #dceac2;
+  --color-brand-jade-green: #00aa6b;
 
+  /* Outras Cores da Paleta */
   --color-brand-gray: #484848;
   --color-brand-blue-light: #c2e0f0;
-  --color-brand-blue-steal: #4682B4;
-  
-  --color-brand-blue-clean: #93B4D7;
-  --color-brand-green-light: #dceac2;
-  --color-brand-jade-green: #00AA6B;
-  --color-brand-coral: #027A7B;
-
-
-  --font-script: var(--font-script);
-  --font-serif: var(--font-serif);
-  --font-cursive: "Pacifico", cursive;
-  --font-title: "Open Sans", serif;
+  --color-brand-blue-steal: #4682b4;
+  --color-brand-blue-clean: #93b4d7;
+  --color-brand-coral: #027a7b;
 }
-
-
-
-
-

@@ -1,9 +1,13 @@
+"use client";
+
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 
 export default function Loja() {
+  const { data: products, isLoading, isError } = useProducts();
+
   return (
-    <main className="max-w-6xl mx-auto px-8 py-16">
+    <main className="max-w-6xl mx-auto px-8 py-16 ">
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-2">
           <span className="w-6 h-[2px] bg-brand-green" />
@@ -18,8 +22,13 @@ export default function Loja() {
         </p>
       </div>
 
+      {isLoading && <p className="text-gray-400 text-sm">Carregando produtos...</p>}
+      {isError && (
+        <p className="text-red-500 text-sm">Não foi possível carregar os produtos.</p>
+      )}
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>

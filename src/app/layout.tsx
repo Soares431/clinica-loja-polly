@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/context/CartContext";
 import "./globals.css";
+import QueryProvider from "@/providers/QueryProvider";
+
 
 const caveat = Caveat({ subsets: ["latin"], variable: "--font-script" });
 const playfair = Playfair_Display({
@@ -19,9 +21,11 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${caveat.variable} ${playfair.variable}`}>
       <body className="flex flex-col min-h-screen font-sans">
         <CartProvider>
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
+          <QueryProvider>
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </QueryProvider>
         </CartProvider>
       </body>
     </html>

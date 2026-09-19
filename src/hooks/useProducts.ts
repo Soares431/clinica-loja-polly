@@ -5,6 +5,6 @@ import { Product } from "@/types/product";
 export function useProducts() {
   return useQuery({
     queryKey: ["products"],
-    queryFn: () => apiFetch<Product[]>("/products"),
+    queryFn: () => apiFetch<Product[]>("/product"),
   });
 }

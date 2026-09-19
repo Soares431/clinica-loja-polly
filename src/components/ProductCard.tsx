@@ -1,30 +1,29 @@
 "use client";
 
-import { Product } from "@/types/product";
+import { useState } from "react";
 import Image from "next/image";
+import { Product } from "@/types/product";
 import { useCart } from "@/context/CartContext";
-import { use } from "react";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
+
+  function handleAdd() {
+    addItem(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1500);
+  }
 
   return (
     <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div
-        className={`h-40 ${product.bgColor || "bg-gray-100"} flex items-center justify-center relative overflow-hidden`}
-      >
-        {product.imgProduct &&
-        (product.imgProduct.startsWith("/") ||
-          product.imgProduct.startsWith("http")) ? (
-          <Image
-            src={product.imgProduct}
-            alt={product.name}
-            fill
-            className="object-cover"
-          />
-        ) : (
-          <span className="text-brand-gray/40 text-sm">Foto do produto</span>
-        )}
+      <div className="relative h-40 bg-brand-blue-light">
+        <Image
+          src={`/assets/image/produtos/${product.image}`}
+          alt={product.title}
+          fill
+          className="object-cover"
+        />
       </div>
 
       <div className="p-5">
@@ -33,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </span>
 
         <h3 className="font-serif text-lg text-brand-gray mt-1">
-          {product.name}
+          {product.title}
         </h3>
 
         <p className="text-sm text-gray-500 mt-1 leading-relaxed">
@@ -46,10 +45,14 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
 
           <button
-            onClick={() => addItem(product)}
-            className="bg-brand-teal text-white text-sm font-semibold px-4 py-2 rounded-full hover:opacity-90 transition"
+            onClick={handleAdd}
+            className={`text-sm font-semibold px-4 py-2 rounded-full transition ${
+              added
+                ? "bg-brand-green text-white"
+                : "bg-brand-teal text-white hover:opacity-90"
+            }`}
           >
-            Adicionar
+            {added ? "Adicionado ✓" : "Adicionar"}
           </button>
         </div>
       </div>
