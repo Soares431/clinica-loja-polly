@@ -14,14 +14,8 @@ import {
   Quote,
 } from "lucide-react";
 
-import { FaWhatsapp } from "react-icons/fa";
 
 export default function Home() {
-  const mensagemWhatsapp =
-    "Olá, Tudo bem?\nGostaria de mais informações sobre a consulta";
-  const linkWhatsapp = `https://wa.me/558199179913?text=${encodeURIComponent(
-    mensagemWhatsapp
-  )}`;
 
   const servicos = [
     {
@@ -101,12 +95,12 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
-                href={linkWhatsapp}
+                href="/agendamento"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#8eb825] hover:bg-[#7ca31e] text-white font-bold px-6 py-3.5 rounded-full shadow-md transition-all text-sm"
               >
-                <FaWhatsapp className="w-5 h-5" />
+                <Calendar className="w-5 h-5" />
                 Agende uma Consulta
               </a>
               <Link
@@ -280,7 +274,7 @@ export default function Home() {
           </p>
           <div className="pt-2">
             <a
-              href={linkWhatsapp}
+              href="/agendamento"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#8eb825] hover:bg-[#7ca31e] text-white font-bold px-8 py-4 rounded-full shadow-md transition-all text-sm"
