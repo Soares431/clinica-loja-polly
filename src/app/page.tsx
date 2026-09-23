@@ -13,29 +13,31 @@ import {
   Star,
   Quote,
 } from "lucide-react";
+
 import { FaWhatsapp } from "react-icons/fa";
-import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Home() {
   const mensagemWhatsapp =
     "Olá, Tudo bem?\nGostaria de mais informações sobre a consulta";
-  const linkWhatsapp = `https://wa.me/558199179913?text=${encodeURIComponent(mensagemWhatsapp)}`;
+  const linkWhatsapp = `https://wa.me/558199179913?text=${encodeURIComponent(
+    mensagemWhatsapp
+  )}`;
 
   const servicos = [
     {
-      icon: <Brain className="w-8 h-8 text-brand-teal" />,
+      icon: <Brain className="w-8 h-8 text-[#6c8f18]" />,
       title: "Avaliação Neuropsicológica",
       description:
         "Investigação detalhada das funções cognitivas (memória, atenção, raciocínio) para diagnósticos precisos.",
     },
     {
-      icon: <Heart className="w-8 h-8 text-brand-teal" />,
+      icon: <Heart className="w-8 h-8 text-[#6c8f18]" />,
       title: "Reabilitação Cognitiva",
       description:
         "Intervenções personalizadas para estimulação e recuperação de habilidades neuropsicológicas.",
     },
     {
-      icon: <Sparkles className="w-8 h-8 text-brand-teal" />,
+      icon: <Sparkles className="w-8 h-8 text-[#6c8f18]" />,
       title: "Psicoterapia Individual",
       description:
         "Acompanhamento emocional especializado para lidar com ansiedade, estresse e autoconhecimento.",
@@ -56,7 +58,7 @@ export default function Home() {
       contexto:
         "Busca por auxílio na organização escolar e foco nas atividades",
       depoimento:
-        "A Pollyanna foi fundamental para entender as dificuldades do meu filho na escola. O processo de avaliação foi condução com muita paciência e o retorno trouxe estratégias práticas que mudaram nossa rotina em casa.",
+        "A Pollyanna foi fundamental para entender as dificuldades do meu filho na escola. O processo de avaliação foi conduzido com muita paciência e o retorno trouxe estratégias práticas que mudaram nossa rotina em casa.",
       avatar:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
     },
@@ -81,51 +83,49 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-bg text-ink">
-      {/* 0. CARROSSEL NO TOPO */}
-      {/* <HeroCarousel /> */}
-
-      {/* 1. SEÇÃO HERO (Apresentação Principal) */}
-      <section className="relative bg-gradient-to-b from-brand-teal-deep to-[#14434a] text-white py-16 md:py-24 px-4 sm:px-8">
+    <div className="min-h-screen bg-white text-slate-800">
+      {/* 1. SEÇÃO HERO (PAINEL AZUL) */}
+      <section className="bg-[#0f4c5c] text-white py-16 md:py-24 px-4 sm:px-8 border-b border-slate-100">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
-            <span className="inline-block w-fit bg-brand-teal/20 text-brand-teal border border-brand-teal/40 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
-              Pollyanna Barreto — Neuropsicóloga
-            </span>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              Cuidado neuropsicológico e emocional com foco no seu
-              desenvolvimento
+          
+            
+            {/* TÍTULO AUMENTADO */}
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Clínica Psicologix
             </h1>
-            <p className="text-footer-text-soft/90 text-base sm:text-lg leading-relaxed">
-              Um espaço seguro e especializado para avaliar, compreender e
-              fortalecer sua saúde mental e cognitiva.
+
+            <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-xl">
+              Cuidado neuropsicológico e emocional com foco no seu desenvolvimento. Um espaço seguro e especializado para avaliar, compreender e fortalecer sua saúde mental e cognitiva.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
                 href={linkWhatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-brand-teal hover:bg-teal text-brand-teal-deep font-bold px-6 py-3.5 rounded-full shadow-lg transition-all text-sm"
+                className="inline-flex items-center justify-center gap-2 bg-[#8eb825] hover:bg-[#7ca31e] text-white font-bold px-6 py-3.5 rounded-full shadow-md transition-all text-sm"
               >
                 <FaWhatsapp className="w-5 h-5" />
-                Agendar pelo WhatsApp
+                Agende uma Consulta
               </a>
               <Link
-                href="#servicos"
-                className="inline-flex items-center justify-center gap-2 border border-white/40 hover:bg-white/10 text-white font-medium px-6 py-3.5 rounded-full transition-all text-sm"
+                href="/servicos"
+                className="inline-flex items-center justify-center gap-2 border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3.5 rounded-full transition-all text-sm backdrop-blur-sm"
               >
-                Conhecer Serviços
+                Conheça nossos Serviços
               </Link>
             </div>
           </div>
 
           <div className="flex justify-center relative">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-4 border-brand-teal/30 shadow-2xl">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl">
               <Image
-                src="/assets/image/logos/Logo_neuropsicóloga_nome_de_lado-semfundo_COPIA.png"
+                src="/assets/image/foto-pessoal6.jpeg"
                 alt="Pollyanna Barreto Neuropsicologia"
                 fill
-                className="object-contain p-8 bg-brand-teal-deep"
+                sizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, 384px"
+                className="object-cover object-center"
                 priority
               />
             </div>
@@ -133,14 +133,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. SEÇÃO SOBRE A CLÍNICA */}
+      {/* 2. SEÇÃO SOBRE */}
       <section className="py-16 md:py-20 px-4 sm:px-8 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-teal-deep">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
               Sobre o Atendimento Neuropsicológico
             </h2>
-            <p className="text-ink-soft leading-relaxed">
+            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
               A neuropsicologia atua na relação entre o funcionamento cerebral e
               o comportamento humano. O objetivo do trabalho é identificar
               potenciais, compreender limitações cognitivas e emocionais e
@@ -150,23 +150,23 @@ export default function Home() {
               {diferenciais.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-3 text-sm font-medium text-ink"
+                  className="flex items-center gap-3 text-sm font-medium text-slate-700"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-brand-teal shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#8eb825] shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-bg p-8 rounded-2xl border border-brand-green-light/60 space-y-4">
-            <h3 className="font-script text-2xl text-brand-teal-deep">
+          <div className="bg-[#f8fafc] p-8 rounded-2xl border border-slate-200/80 space-y-4 shadow-sm">
+            <h3 className="font-serif text-2xl font-bold text-slate-900">
               Pollyanna Barreto
             </h3>
-            <p className="text-xs uppercase tracking-wider font-semibold text-brand-teal">
+            <p className="text-xs uppercase tracking-wider font-bold text-[#6c8f18]">
               Psicóloga e Neuropsicóloga
             </p>
-            <p className="text-sm text-ink-soft leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed">
               Dedicada a oferecer um acolhimento ético e embasado
               cientificamente para crianças, adolescentes, adultos e idosos.
             </p>
@@ -174,14 +174,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. SEÇÃO DE SERVIÇOS / ESPECIALIDADES */}
-      <section id="servicos" className="py-16 md:py-20 px-4 sm:px-8 bg-bg">
+      {/* 3. SEÇÃO DE SERVIÇOS */}
+      <section id="servicos" className="py-16 md:py-20 px-4 sm:px-8 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-teal-deep">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
               Áreas de Atuação
             </h2>
-            <p className="text-ink-soft text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               Conheça os principais serviços oferecidos para auxílio no
               diagnóstico e tratamento.
             </p>
@@ -191,13 +191,15 @@ export default function Home() {
             {servicos.map((servico, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl border border-brand-teal/10 shadow-sm hover:shadow-md transition-all flex flex-col gap-4"
+                className="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col gap-4"
               >
-                <div className="p-3 bg-bg w-fit rounded-xl">{servico.icon}</div>
-                <h3 className="font-serif text-lg font-bold text-brand-teal-deep">
+                <div className="p-3 bg-[#8eb825]/10 w-fit rounded-xl">
+                  {servico.icon}
+                </div>
+                <h3 className="font-serif text-lg font-bold text-slate-900">
                   {servico.title}
                 </h3>
-                <p className="text-sm text-ink-soft leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {servico.description}
                 </p>
               </div>
@@ -206,17 +208,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. SEÇÃO DE DEPOIMENTOS / AVALIAÇÕES */}
-      <section className="py-16 md:py-20 px-4 sm:px-8 bg-white border-t border-b border-brand-teal/10">
+      {/* 4. SEÇÃO DE DEPOIMENTOS */}
+      <section className="py-16 md:py-20 px-4 sm:px-8 bg-white border-t border-b border-slate-100">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="inline-block bg-brand-teal/10 text-brand-teal-deep text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="inline-block bg-[#8eb825]/15 text-[#6c8f18] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-[#8eb825]/30">
               Depoimentos
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-teal-deep">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900">
               O que dizem os nossos pacientes
             </h2>
-            <p className="text-ink-soft text-sm sm:text-base">
+            <p className="text-slate-600 text-sm sm:text-base">
               Relatos reais de quem encontrou acolhimento e suporte no nosso
               atendimento.
             </p>
@@ -226,42 +228,38 @@ export default function Home() {
             {depoimentos.map((depoimento, index) => (
               <div
                 key={index}
-                className="bg-bg p-8 rounded-2xl border border-brand-teal/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-6 relative"
+                className="bg-[#f8fafc] p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-6 relative"
               >
-                <Quote className="absolute top-6 right-6 w-8 h-8 text-brand-teal/20" />
+                <Quote className="absolute top-6 right-6 w-8 h-8 text-[#8eb825]/30" />
                 <div className="space-y-4">
-                  {/* Estrelas */}
                   <div className="flex gap-1 text-amber-400">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-
-                  {/* Contexto do paciente */}
-                  <p className="text-xs font-semibold text-brand-teal uppercase tracking-wide">
+                  <p className="text-xs font-bold text-[#6c8f18] uppercase tracking-wide">
                     {depoimento.contexto}
                   </p>
-
-                  {/* Opinião */}
-                  <p className="text-sm text-ink-soft italic leading-relaxed">
+                  <p className="text-sm text-slate-600 italic leading-relaxed">
                     "{depoimento.depoimento}"
                   </p>
                 </div>
 
-                {/* Perfil do Paciente com Imagem */}
-                <div className="flex items-center gap-4 pt-4 border-t border-brand-teal/10">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-brand-teal/30">
-                    <img
+                <div className="flex items-center gap-4 pt-4 border-t border-slate-200">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-[#8eb825]/40">
+                    <Image
                       src={depoimento.avatar}
                       alt={depoimento.nome}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                     />
                   </div>
                   <div>
-                    <h4 className="font-bold text-brand-teal-deep text-sm">
+                    <h4 className="font-bold text-slate-900 text-sm">
                       {depoimento.nome}
                     </h4>
-                    <p className="text-xs text-ink-soft">{depoimento.perfil}</p>
+                    <p className="text-xs text-slate-500">{depoimento.perfil}</p>
                   </div>
                 </div>
               </div>
@@ -270,22 +268,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SEÇÃO CTA (CHAMADA DE AGENDAMENTO) */}
-      <section className="py-16 px-4 sm:px-8 bg-brand-teal-deep text-white text-center">
-        <div className="max-w-4xl mx-auto space-y-6">
+      {/* 5. SEÇÃO CTA */}
+      <section className="py-16 px-4 sm:px-8 bg-white text-center">
+        <div className="max-w-4xl mx-auto bg-[#0f4c5c] text-white p-8 sm:p-12 rounded-3xl shadow-lg space-y-6">
           <h2 className="font-serif text-2xl sm:text-3xl font-bold">
             Pronto para dar o primeiro passo em direção ao seu bem-estar?
           </h2>
-          <p className="text-footer-text-soft/90 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Entre em contato para tirar dúvidas sobre a consulta, valores e
             horários disponíveis.
           </p>
           <div className="pt-2">
             <a
-              href="http://localhost:3001"
+              href={linkWhatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-brand-teal hover:bg-teal text-brand-teal-deep font-bold px-8 py-4 rounded-full shadow-lg transition-all text-sm"
+              className="inline-flex items-center justify-center gap-2 bg-[#8eb825] hover:bg-[#7ca31e] text-white font-bold px-8 py-4 rounded-full shadow-md transition-all text-sm"
             >
               <Calendar className="w-5 h-5" />
               Agendar uma Consulta
@@ -295,15 +293,15 @@ export default function Home() {
       </section>
 
       {/* 6. SEÇÃO DE LOCALIZAÇÃO E CONTATO */}
-      <section className="py-16 md:py-20 px-4 sm:px-8 bg-white">
+      <section className="py-16 md:py-20 px-4 sm:px-8 bg-[#f8fafc] border-t border-slate-100">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex items-start gap-4 p-6 rounded-xl bg-bg">
-            <MapPin className="w-6 h-6 text-brand-teal shrink-0 mt-1" />
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+            <MapPin className="w-6 h-6 text-[#6c8f18] shrink-0 mt-1" />
             <div>
-              <h4 className="font-bold text-brand-teal-deep text-sm mb-1">
+              <h4 className="font-bold text-slate-900 text-sm mb-1">
                 Localização
               </h4>
-              <p className="text-xs text-ink-soft leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 R. João Dourado Filho, 88 – sala 06
                 <br />
                 Piedade — Jaboatão dos Guararapes/PE
@@ -311,23 +309,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-6 rounded-xl bg-bg">
-            <Phone className="w-6 h-6 text-brand-teal shrink-0 mt-1" />
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+            <Phone className="w-6 h-6 text-[#6c8f18] shrink-0 mt-1" />
             <div>
-              <h4 className="font-bold text-brand-teal-deep text-sm mb-1">
+              <h4 className="font-bold text-slate-900 text-sm mb-1">
                 Telefone / WhatsApp
               </h4>
-              <p className="text-xs text-ink-soft">(81) 9917-9913</p>
+              <p className="text-xs text-slate-600">(81) 9917-9913</p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-6 rounded-xl bg-bg">
-            <Mail className="w-6 h-6 text-brand-teal shrink-0 mt-1" />
+          <div className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm">
+            <Mail className="w-6 h-6 text-[#6c8f18] shrink-0 mt-1" />
             <div>
-              <h4 className="font-bold text-brand-teal-deep text-sm mb-1">
+              <h4 className="font-bold text-slate-900 text-sm mb-1">
                 E-mail
               </h4>
-              <p className="text-xs text-ink-soft">
+              <p className="text-xs text-slate-600">
                 desenvolvimentopsi26@gmail.com
               </p>
             </div>

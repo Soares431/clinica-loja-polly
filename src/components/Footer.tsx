@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS } from "@/constants/navegation";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldCheck } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
                 alt="Logo Clínica Psicologix"
                 width={320}
                 height={120}
-                className="w-auto h-12 sm:h-14 object-contain brightness-0 invert" 
+                className="w-auto h-12 sm:h-14 object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-sm text-footer-text-soft leading-relaxed opacity-90">
@@ -50,6 +50,16 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              {/* Link para a Política de Privacidade */}
+              <li>
+                <Link
+                  href="/politicaPrivacidade"
+                  className="text-footer-text hover:text-footer-border transition-colors duration-200 flex items-center gap-1.5"
+                >
+                  <ShieldCheck className="w-3.5 h-3.5 text-footer-border shrink-0" />
+                  Política de Privacidade
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -132,17 +142,26 @@ export default function Footer() {
             © {new Date().getFullYear()} Clínica Psicologix. Todos os direitos
             reservados.
           </p>
-          <p>
-            Desenvolvido para{" "}
-            <a
-              href="https://psicologix.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-footer-text hover:text-footer-border underline"
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/politicaPrivacidade"
+              className="hover:text-footer-border underline transition-colors"
             >
-              Pollyanna Barreto - Neuropsicóloga
-            </a>
-          </p>
+              Política de Privacidade
+            </Link>
+            <span>•</span>
+            <p>
+              Desenvolvido para{" "}
+              <a
+                href="https://psicologix.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-footer-text hover:text-footer-border underline"
+              >
+                Pollyanna Barreto - Neuropsicóloga
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
